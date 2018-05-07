@@ -17,4 +17,3 @@ pbinom(4,4,0.25) #=1
 
 #prova 12 questoes; acertar 7 questoes; cada questão tem 4 alternativas
 dbinom(7,12,0.25)
-
