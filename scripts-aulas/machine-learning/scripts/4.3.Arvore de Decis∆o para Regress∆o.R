@@ -35,6 +35,29 @@ dim(novocredito)
 predict(modelo, novocredito)
 ####
 
+#exemplo 2
+install.packages("rpart", dependencies = T)
+library("rpart")
+credito = read.csv(file.choose(),sep=',',header=T)
+amostra = sample(2, 1000, replace=T, prob=c(0.7, 0.3))
+creditotreino = credito[amostra==1]
+creditoteste = credito[amostra==2]
+
+arvore = rpart(class ~., data=creditotreino, method="class")
+print(arvore)
+plot(arvore)
+text(arvore, use.n=T, all=T, cex=.8)#poe os textos
+
+teste = predict(arvore, newdata=creditoteste)#retorna a probabilidade para as classes
+cred = cbind(creditoteste, teste) #adiciona a predicao teste na tabela creditoteste
+cred['Result']= ifelse(cred$bad>=0.5, "bad", "good")#cria uma coluna com a classe de acordo com a probabilidade
+
+confusao = table(cred$class, cred$Result)
+taxadeacerto = (confusao[1] + confusao[4]) / sum(confusao)
+taxadeerro   = (confusao[2] + confusao[3]) / sum(confusao)
+
+#####
+
 modelo = rpart(Sepal.Length ~ Sepal.Width + Petal.Length +  Petal.Width + Species ,data=iris)
 modelo
 
