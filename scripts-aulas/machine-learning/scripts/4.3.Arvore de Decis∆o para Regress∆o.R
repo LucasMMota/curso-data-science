@@ -27,10 +27,13 @@ confusao = table(creditoteste$class, predicao) #matriz de confusão
 taxadeacerto = (confusao[1] + confusao[4]) / sum(confusao)
 taxadeerro   = (confusao[2] + confusao[3]) / sum(confusao)
 
+#previsao de novo credito
+novocredito = read.csv(file.choose(),sep=',',header=T)
+novocredito
+dim(novocredito)
 
-
-
-
+predict(modelo, novocredito)
+####
 
 modelo = rpart(Sepal.Length ~ Sepal.Width + Petal.Length +  Petal.Width + Species ,data=iris)
 modelo
