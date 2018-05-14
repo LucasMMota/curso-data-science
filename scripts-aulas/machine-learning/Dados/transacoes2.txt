@@ -1,6 +1,6 @@
-Cerveja,Carvão,Pão
-Carvão,Pão
-Cerveja,Carvão,Maionese
-Cerveja,Carvão,Pão,Maionese
+Cerveja,Carvao,Pao
+Carvao,Pao
+Cerveja,Carvao,Maionese
+Cerveja,Carvao,Pao,Maionese
 Cerveja
-Carvão
+Carvao

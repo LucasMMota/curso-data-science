@@ -5,9 +5,9 @@ library(arules)
 transacoes <-read.transactions(file.choose(),format="basket",sep=",")
 
 image(transacoes)
+inspect(transacoes)
 
 regras <- eclat(transacoes, parameter = list(supp = 0.1, maxlen = 15))
-
 inspect(regras)
 
 library("arulesViz")
