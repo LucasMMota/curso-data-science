@@ -62,7 +62,7 @@ h2o.performance(modelo)
 
 treino[20,785]
 
-pred <- h2o.predict(model, newdata = treino[20,1:784])
+pred <- h2o.predict(modelo, newdata = treino[20,1:784])
 
 pred$predict
 
