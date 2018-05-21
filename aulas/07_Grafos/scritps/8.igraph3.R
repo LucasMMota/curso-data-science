@@ -1,6 +1,6 @@
 #Formacao Cientista de Dados - Fernando Amaral
-
-grafo8 = read_graph(file.choose(), format = c("graphml"))
+x = file.choose()
+grafo8 = read_graph(x, format = c("graphml"))
 
 degree(grafo8, mode="all")
 degree(grafo8, mode="in")	
