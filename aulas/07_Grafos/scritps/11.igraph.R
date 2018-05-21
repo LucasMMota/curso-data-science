@@ -1,11 +1,11 @@
 #Formacao Cientista de Dados - Fernando Amaral
-
-
+install.packages("igraphdata")
+library(igraphdata)
 data(Koenigsberg)
 Koenigsberg
 plot(Koenigsberg)
  
-degree(karate, mode="all")
+degree(Koenigsberg, mode="all")
 
 data(kite)
 plot(kite)
