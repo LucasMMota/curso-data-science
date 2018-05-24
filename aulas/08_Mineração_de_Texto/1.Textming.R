@@ -1,8 +1,16 @@
 #Formacao Cientista de Dados - Fernando Amaral
+install.packages("tm")
+library(tm)
 
-corpus = VCorpus(DirSource("E:/Minera??o de dados/Textmining/texto", encoding = "UTF-8"),readerControl = list(reader=readPlain,language = "por"))
+getSources()#exibe as fontes de dados poss??veis
+#pcorpus persistente
+#vcorpus vol??til
+x = "/Users/lucas/Documents/curso-data-science/aulas/08_Minera\303\247\303\243o_de_Texto/Arquivos/"
+corpus = VCorpus(DirSource(x, encoding = "UTF-8"),readerControl = list(reader=readPlain,language = "eng"))
+
 inspect(corpus) 
 inspect(corpus[1:100])  
+
 meta(corpus[[1]])  
 inspect(corpus[[2]])  
 as.character(corpus[[2]]) 
