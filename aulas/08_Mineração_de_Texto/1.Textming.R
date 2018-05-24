@@ -1,6 +1,7 @@
 #Formacao Cientista de Dados - Fernando Amaral
-install.packages("tm")
+install.packages("wordcloud")
 library(tm)
+library(SnowballC)
 
 getSources()#exibe as fontes de dados poss??veis
 #pcorpus persistente
@@ -11,10 +12,12 @@ corpus = VCorpus(DirSource(x, encoding = "UTF-8"),readerControl = list(reader=re
 inspect(corpus) 
 inspect(corpus[1:100])  
 
-meta(corpus[[1]])  
+meta(corpus[[1]])  #metadados dos corpus
 inspect(corpus[[2]])  
 as.character(corpus[[2]]) 
 as.character(corpus[[2]])[1] 
+
+stopwords("portuguese")
 
 corpus = tm_map(corpus, removeWords, stopwords("english"))
 corpus = tm_map(corpus , stripWhitespace)
